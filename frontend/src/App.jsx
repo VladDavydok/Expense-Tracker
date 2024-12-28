@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import SignUp from './pages/auth/sign-up.jsx';
 import SignIn from './pages/auth/sign-in.jsx';
+import Settings from './pages/settings.jsx';
 import useStore from './store';
 import { setAuthToken } from './libs/apiCall';
 import { Toaster } from 'sonner';
@@ -15,7 +16,6 @@ const RootLayout = () => {
     <Navigate to="sign-in" replace={true} />
   ) : (
     <>
-      <Navbar />
       <div className="min-h-[cal(h-screen-100px)]">
         <Outlet />
       </div>
@@ -30,6 +30,7 @@ function App() {
         <Routes>
           <Route element={<RootLayout />}>
             <Route path="/" element={<Navigate to="/overview" />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
