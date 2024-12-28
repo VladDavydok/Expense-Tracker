@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
-import SignUp from './pages/sign-up.jsx';
+import SignUp from './pages/auth/sign-up.jsx';
+import SignIn from './pages/auth/sign-in.jsx';
 import useStore from './store';
 import { setAuthToken } from './libs/apiCall';
 import { Toaster } from 'sonner';
@@ -30,6 +31,7 @@ function App() {
           <Route element={<RootLayout />}>
             <Route path="/" element={<Navigate to="/overview" />} />
           </Route>
+          <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </div>

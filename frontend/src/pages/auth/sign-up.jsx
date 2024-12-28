@@ -9,13 +9,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '../components/ui/card';
-import Input from '../components/ui/input';
-import { Button } from '../components/ui/button';
+} from '../../components/ui/card';
+import Input from '../../components/ui/input';
+import { Button } from '../../components/ui/button';
 import { BiLoader } from 'react-icons/bi';
-import api from '../libs/apiCall';
+import api from '../../libs/apiCall';
 import { toast } from 'sonner';
-import useStore from '../store';
+import useStore from '../../store';
 
 const RegisterSchema = z.object({
   email: z
