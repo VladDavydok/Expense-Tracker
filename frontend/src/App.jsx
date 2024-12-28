@@ -9,6 +9,7 @@ import { setAuthToken } from './libs/apiCall';
 import { Toaster } from 'sonner';
 import Transactions from './pages/transactions.jsx';
 import Dashboard from './pages/dashbaord.jsx';
+import Navbar from './components/navbar.tsx';
 
 const RootLayout = () => {
   const { user } = useStore((state) => state);
@@ -19,6 +20,7 @@ const RootLayout = () => {
     <Navigate to="sign-in" replace={true} />
   ) : (
     <>
+      <Navbar />
       <div className="min-h-[cal(h-screen-100px)]">
         <Outlet />
       </div>
